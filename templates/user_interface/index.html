@@ -1,9 +1,93 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container">
-    <div class="row">
-      
+  <section class="mt-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-12">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h5 class="text-white">Nifty50</h5>
+            </div>
+            <div class="card-body">
+              <p>cart</p>
+            </div>
+            <div class="card-footer">
+              <p class="text-info m-0">Previous Price - {{nes_data.current_price}} </p>
+              {% if nes_data.current_price > nes_data.previous_price %}
+                <p class="text-success m-0">Current Price - {{nes_data.current_price}} </p>
+              {% else %}
+                <p class="text-danger m-0">Current Price - {{nes_data.current_price}} </p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h5 class="text-white">Nifty50</h5>
+            </div>
+            <div class="card-body">
+              <p>cart</p>
+            </div>
+            <div class="card-footer">
+              <p>Value - 200</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h5 class="text-white">Nifty50</h5>
+            </div>
+            <div class="card-body">
+              <p>cart</p>
+            </div>
+            <div class="card-footer">
+              <p>Value - 200</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h5 class="text-white">Nifty50</h5>
+            </div>
+            <div class="card-body">
+              <p>cart</p>
+            </div>
+            <div class="card-footer">
+              <p>Value - 200</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h5 class="text-white">Nifty50</h5>
+            </div>
+            <div class="card-body">
+              <p>cart</p>
+            </div>
+            <div class="card-footer">
+              <p>Value - 200</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-12">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <h5 class="text-white">Nifty50</h5>
+            </div>
+            <div class="card-body">
+              <p>cart</p>
+            </div>
+            <div class="card-footer">
+              <p>Value - 200</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 {% endblock %}
