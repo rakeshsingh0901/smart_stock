@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Delivery List</h1>
+{% for delivery in deliveries %}
+    <p>{{delivery.delivery_date}}</p>
+    {% if delivery.delivery_high > 1.5 %}
+        <p class="bg-success">{{delivery.delivery_high}}</p>
+    {% else %}
+        <p>{{delivery.delivery_high}}</p>
+    {% endif %}
+    <p>{{delivery.delivery_per}}</p>
+    <p>{{delivery.trade_ratio}}</p>
+<br>
+{% endfor %}
+
+{% endblock %}

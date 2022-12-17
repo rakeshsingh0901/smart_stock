@@ -6,11 +6,13 @@
     <title>Stock Track</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to=fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" >
-    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}"
+    <link rel="stylesheet" type="text/css" href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}" > 
     <script src="{% static 'js/jquery.min.js' %}" defer ></script>
     <script src="{% static 'js/bootstrap.bundle.min.js' %}" defer ></script>
     <script src="{% static 'js/bootstrap.min.js' %}" defer ></script>
     <script src="{% static 'js/popper.min.js' %}" defer ></script>
+    {% block script %} {% endblock %}
 
   </head>
   <body>

@@ -2,8 +2,55 @@
 
 {% block content %}
 <div class="container">
-  <div class="row">
-    <h1> Update Data </h1>
+  <h1> Update Data </h1>
+  <div class="mt-4">
+    <h6> Day Delivery </h6>
+    <form action="{% url 'delivery_day' %}" method="post">
+      {% csrf_token %} 
+      <input type="date" name="delivery_date" />
+      <input type="submit" value="Update Data"/>      
+    </form>
   </div>
+  <div class="mt-4">
+    <h6> Bulk Day Delivery </h6>
+    <form action="{%url 'bulk_delivery_day' %}" method="post">
+      {% csrf_token %}
+      <label>Start Date</label>
+      <input type="date" name="start_date" />
+      <label>End Date</label>
+      <input type="date" name="end_date" />
+      <input type="submit" value="Update Data" />
+    </form>
+  </div>
+    <div class="mt-4">
+      <h6> Weekly Delivery </h6>
+      <form action="{%url 'delivery_week' %}" method="post">
+        {% csrf_token %}
+        <label>Start Date</label>
+        <input type="date" name="start_date" />
+        <label>End Date</label>
+        <input type="date" name="end_date" />
+        <input type="submit" value="Update Data" />
+      </form>
+    </div>
+    <div class="mt-4">
+      <h6> Delete Delivery</h6>
+      <form action="/" method="post">
+        {% csrf_token %} 
+        <input type="date" name="delivery_date" />
+        <input type="submit" value="Update Data"/>      
+      </form>
+    </div>
+    <div class="mt-4">
+      <h6>Bulk Delete Delivery</h6>
+      <form action="/" method="post">
+        {% csrf_token %}
+        <label>Start Date</label>
+        <input type="date" name="start_date" />
+        <label>End Date</label>
+        <input type="date" name="end_date" />
+        <input type="submit" value="Update Data" />
+      </form>
+    </div>
 </div>
 {% endblock %}

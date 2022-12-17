@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block script %}
+  <script src="https://d3js.org/d3.v5.min.js" defer></script>
+  <script src="{% static 'js/custom_chart.js' %}" defer></script>
+  <script src="{% static 'js/custom.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-2 scroll">
+      {% for i in stocks %}
+        <div class="m-2">
+          <p class="show_chart m-0" data-symbol="{{i.symbol}}">{{i.symbol}}</p>
+          <h6 m-0>Bookmark</h6>
+          <select class="bookmark" class="form-select">
+            <option>Select</option>
+            {% for bookmark in bookmarks %}
+              <option value="{{bookmark.id}}-{{i.symbol}}">{{bookmark.name}}</option>
+            {% endfor %}
+          </select>
+          <a href="{% url 'delivery_list' i.symbol %}">Delivery</a>
+          <a href="{% url 'week_delivery_list' i.symbol %}">Week Delivery</a>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="col-lg-10 card">
+      <div class="d-flex flex-row-reverse" style="z-index: 999;">
+        <div class="p-2 chart_interval" data-interval="1mo">1mo</div>
+        <div class="p-2 chart_interval" data-interval="1wk">1wk</div>
+        <div class="p-2 chart_interval" data-interval="1d">1d</div>
+        <div class="p-2 chart_interval" data-interval="1h">1h</div>
+      </div>
+
+      <div class="d-flex flex-row-reverse" style="z-index: 999;">
+        <div class="p-2 chart_range" data-range="6mo">6mo</div>
+        <div class="p-2 chart_range" data-range="1y">1y</div>
+        <div class="p-2 chart_range" data-range="2y">2y</div>
+        <div class="p-2 chart_range" data-range="5y">5y</div>
+      </div>
+      <div class="chart" style="position: fixed;">
+        <svg id="container"></svg>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
